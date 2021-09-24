@@ -63,6 +63,7 @@
             android:inputType="textPassword" />
 
         <LinearLayout
+            android:id="@+id/main_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_password"
@@ -85,16 +86,17 @@
 
         </LinearLayout>
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/main_new_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_create_account"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/main_buttons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/main_new_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_create_account"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 
 </LinearLayout>

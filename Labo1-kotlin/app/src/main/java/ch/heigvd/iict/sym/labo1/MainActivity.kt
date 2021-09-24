@@ -1,10 +1,14 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,7 +80,30 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //TODO à compléter...
+            // Vérification de la validité de l'email
+            if(! emailInput!!.contains('@')){
+                val toast = Toast.makeText(applicationContext, getString(R.string.main_invalid_email_format), Toast.LENGTH_SHORT)
+                toast.show()
+            }
+
+            // Vérification couple email / mot de passe
+            if(credentials.contains(Pair(emailInput, passwordInput))){
+
+                // Valide, ouverture nouvelle activité.
+
+            }
+            else
+            {
+                // Inexistant, affichage fenêtre de dialogue.
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage(getString(R.string.main_error_email_pass))
+                    .setPositiveButton(getString(R.string.main_ok_button),
+                        DialogInterface.OnClickListener { dialog, id ->
+                            cancelButton.callOnClick()
+                        })
+                builder.create()
+                builder.show()
+            }
         }
     }
 
