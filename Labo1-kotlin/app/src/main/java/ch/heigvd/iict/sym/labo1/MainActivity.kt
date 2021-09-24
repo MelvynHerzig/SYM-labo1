@@ -1,14 +1,17 @@
 package ch.heigvd.iict.sym.labo1
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+
+// Clé pour le passage de l'adresse mail
+const val EXTRA_EMAIL = "email.MESSAGE"
 
 class MainActivity : AppCompatActivity() {
 
@@ -90,6 +93,10 @@ class MainActivity : AppCompatActivity() {
             if(credentials.contains(Pair(emailInput, passwordInput))){
 
                 // Valide, ouverture nouvelle activité.
+                val intent = Intent(this, ConnectedActivity::class.java).apply {
+                    putExtra(EXTRA_EMAIL, emailInput)
+                }
+                startActivity(intent)
 
             }
             else

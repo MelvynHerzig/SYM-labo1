@@ -10,5 +10,6 @@
     <string name="main_create_account">Nouveau compte</string>
     <string name="main_icon_desc">Logo de l\'application</string>
     <string name="main_error_email_pass">Le couple email et mot de passe est invalide</string>
+    <string name="connected_greetings">Bonjour</string>
 
 </resources>
