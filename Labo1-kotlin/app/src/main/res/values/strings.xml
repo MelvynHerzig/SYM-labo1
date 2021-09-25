@@ -12,5 +12,6 @@
     <string name="main_error_email_pass">email and password pair is not correct</string>
     <string name="main_ok_button" translatable="false">ok</string>
     <string name="connected_greetings">Good morning</string>
+    <string name="connected_profile_picture_desc">Your profile picture</string>
 
 </resources>
