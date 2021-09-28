@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(getString(R.string.main_error_email_pass))
                     .setPositiveButton(getString(R.string.main_ok_button),
-                        DialogInterface.OnClickListener { dialog, id ->
+                        DialogInterface.OnClickListener { _, _ ->
                             cancelButton.callOnClick()
                         })
                 builder.create()
