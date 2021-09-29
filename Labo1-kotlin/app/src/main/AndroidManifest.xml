@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/SymTheme">
         <activity
+            android:name=".SignupActivity"
+            android:exported="true" />
+        <activity
             android:name=".ConnectedActivity"
             android:exported="true" />
         <activity
