@@ -19,14 +19,6 @@ const val EXTRA_EMAIL = "email.MESSAGE"
 
 abstract class FormActivity : AppCompatActivity() {
 
-    // on définit une liste de couples e-mail / mot de passe
-    // ceci est fait juste pour simplifier ce premier laboratoire,
-    // mais il est évident que de hardcoder ceux-ci est une pratique à éviter à tout prix...
-    // /!\ listOf() retourne une List<T> qui est immuable
-    private val credentials = listOf(
-        Pair("user1@heig-vd.ch", "1234"),
-        Pair("user2@heig-vd.ch", "abcd")
-    )
 
     // le modifieur lateinit permet de définir des variables avec un type non-null
     // sans pour autant les initialiser immédiatement
@@ -36,20 +28,21 @@ abstract class FormActivity : AppCompatActivity() {
     protected lateinit var validateButton: Button
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        // l'appel à la méthode onCreate de la super classe est obligatoire
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun setContentView(layoutResID: Int) {
+        super.setContentView(layoutResID)
+        createUIBehaviour()
+    }
 
-        Log.d(TAG, "l'activité est en créée")
+
+    open fun createUIBehaviour() {
 
         // on va maintenant lier le code avec les éléments graphiques (champs texts, boutons, etc.)
         // présents dans le layout (nous allons utiliser l'id défini dans le layout, le cast est
         // réalisé automatiquement)
-        email = findViewById(R.id.main_email)
-        password = findViewById(R.id.main_password)
-        cancelButton = findViewById(R.id.main_cancel)
-        validateButton = findViewById(R.id.main_validate)
+        email = findViewById(R.id.form_email)
+        password = findViewById(R.id.form_password)
+        cancelButton = findViewById(R.id.form_cancel)
+        validateButton = findViewById(R.id.form_validate)
 
         // Kotlin, au travers des Android Kotlin Extensions permet d'automatiser encore plus cette
         // étape en créant automatiquement les variables pour tous les éléments graphiques présents
@@ -101,11 +94,10 @@ abstract class FormActivity : AppCompatActivity() {
 
             validateButtonBehaviour()
         }
-
-
     }
 
     abstract fun validateButtonBehaviour()
+
 
     fun onStart(savedInstanceState: Bundle?) {
         super.onStart()

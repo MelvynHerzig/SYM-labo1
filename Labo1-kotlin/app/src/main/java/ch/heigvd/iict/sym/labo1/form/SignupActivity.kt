@@ -1,18 +1,16 @@
 package ch.heigvd.iict.sym.labo1.form
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import ch.heigvd.iict.sym.labo1.R
 
-open class SignupActivity : FormActivity() {
+const val EXTRA_CREDENTIALS = "signup.CREDENTIAL"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // on définit le layout à utiliser pour l'affichage
-        setContentView(R.layout.activity_signup)
 
-        Log.d(TAG, "l'activité est en créée")
-    }
+abstract  class SignupActivity : FormActivity() {
+
 
     override fun validateButtonBehaviour() {
 
@@ -20,8 +18,12 @@ open class SignupActivity : FormActivity() {
         val emailInput = email.text?.toString()
         val passwordInput = password.text?.toString()
 
+        val data = Intent()
 
+        data.putExtra(EXTRA_CREDENTIALS, Pair(emailInput, passwordInput))
 
+        setResult(RESULT_OK, data)
+        finish()
     }
 
     companion object {
