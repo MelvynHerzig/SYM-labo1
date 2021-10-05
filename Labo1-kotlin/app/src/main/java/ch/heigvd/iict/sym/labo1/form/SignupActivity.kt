@@ -1,6 +1,7 @@
 package ch.heigvd.iict.sym.labo1.form
 
 import android.os.Bundle
+import android.util.Log
 import ch.heigvd.iict.sym.labo1.R
 
 open class SignupActivity : FormActivity() {
@@ -10,6 +11,7 @@ open class SignupActivity : FormActivity() {
         // on définit le layout à utiliser pour l'affichage
         setContentView(R.layout.activity_signup)
 
+        Log.d(TAG, "l'activité est en créée")
     }
 
     override fun validateButtonBehaviour() {
@@ -20,5 +22,9 @@ open class SignupActivity : FormActivity() {
 
 
 
+    }
+
+    companion object {
+        private const val TAG: String = "SignupActivity"
     }
 }

@@ -2,8 +2,10 @@ package ch.heigvd.iict.sym.labo1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import ch.heigvd.iict.sym.labo1.form.SignupActivity
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
 class ConnectedActivity : AppCompatActivity() {
@@ -15,6 +17,8 @@ class ConnectedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connected)
 
+        Log.d(TAG, "l'activité est en créée")
+
         // Récupération de l'intention et récupération de la chaîne
         val emailInput = intent.getStringExtra(EXTRA_EMAIL)
 
@@ -25,5 +29,9 @@ class ConnectedActivity : AppCompatActivity() {
         // Récupération de l'image ImageView et mise à jour.
         profilePicture = findViewById(R.id.connected_logo)
         ImageDownloader(profilePicture, "https://thispersondoesnotexist.com/image").show()
+    }
+
+    companion object {
+        private const val TAG: String = "ConnectedActivity"
     }
 }

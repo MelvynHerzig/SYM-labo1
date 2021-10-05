@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.ConnectedActivity
 import ch.heigvd.iict.sym.labo1.R
@@ -15,6 +16,7 @@ open class LoginActivity : FormActivity() {
         super.onCreate(savedInstanceState)
         // on définit le layout à utiliser pour l'affichage
 
+        Log.d(TAG, "l'activité est en créée")
 
         signupLink = findViewById(R.id.main_new_account)
 
@@ -52,5 +54,9 @@ open class LoginActivity : FormActivity() {
         }
 
 
+    }
+
+    companion object {
+        private const val TAG: String = "LoginActivity"
     }
 }
