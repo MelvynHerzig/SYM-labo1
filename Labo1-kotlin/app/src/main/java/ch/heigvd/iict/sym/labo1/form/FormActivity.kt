@@ -33,7 +33,9 @@ abstract class FormActivity : AppCompatActivity() {
         createUIBehaviour()
     }
 
+
     open fun createUIBehaviour() {
+
         // on va maintenant lier le code avec les éléments graphiques (champs texts, boutons, etc.)
         // présents dans le layout (nous allons utiliser l'id défini dans le layout, le cast est
         // réalisé automatiquement)
@@ -97,6 +99,35 @@ abstract class FormActivity : AppCompatActivity() {
     abstract fun validateButtonBehaviour()
 
 
+    fun onStart(savedInstanceState: Bundle?) {
+        super.onStart()
+        Log.d(TAG, "l'activité est démarée")
+    }
+
+    fun onResume(savedInstanceState: Bundle?) {
+        super.onResume()
+        Log.d(TAG, "l'activité est en reprise")
+    }
+
+    fun onPause(savedInstanceState: Bundle?) {
+        super.onPause()
+        Log.d(TAG, "l'activité est mise en pause")
+    }
+
+    fun onStop(savedInstanceState: Bundle?) {
+        super.onStop()
+        Log.d(TAG, "l'activité est arrêtée")
+    }
+
+    fun onDestroy(savedInstanceState: Bundle?) {
+        super.onDestroy()
+        Log.d(TAG, "l'activité est détruite")
+    }
+
+    fun onRestart(savedInstanceState: Bundle?) {
+        super.onRestart()
+        Log.d(TAG, "l'activité est redémarrée")
+    }
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
     // pour des raison de lisibilité du code, les variables et méthodes static

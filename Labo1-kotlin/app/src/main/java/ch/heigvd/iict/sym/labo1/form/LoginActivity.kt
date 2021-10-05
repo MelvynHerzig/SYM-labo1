@@ -2,6 +2,13 @@ package ch.heigvd.iict.sym.labo1.form
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import ch.heigvd.iict.sym.labo1.ConnectedActivity
+
 import ch.heigvd.iict.sym.labo1.R
 
 abstract class LoginActivity : FormActivity() {
@@ -34,6 +41,11 @@ abstract class LoginActivity : FormActivity() {
     }
 
     abstract fun isValidLogin(email : String, password : String) : Boolean
+  
+  abstract fun onValidLogin()
 
-    abstract fun onValidLogin()
+
+    companion object {
+        private const val TAG: String = "LoginActivity"
+    }
 }
