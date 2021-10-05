@@ -1,7 +1,11 @@
 package ch.heigvd.iict.sym.labo1.form
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import ch.heigvd.iict.sym.labo1.R
+
+const val EXTRA_CREDENTIALS = "signup.CREDENTIAL"
 
 abstract  class SignupActivity : FormActivity() {
 
@@ -11,6 +15,11 @@ abstract  class SignupActivity : FormActivity() {
         val emailInput = email.text?.toString()
         val passwordInput = password.text?.toString()
 
+        val data = Intent()
 
+        data.putExtra(EXTRA_CREDENTIALS, Pair(emailInput, passwordInput))
+
+        setResult(RESULT_OK, data)
+        finish()
     }
 }

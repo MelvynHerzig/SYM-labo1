@@ -96,6 +96,8 @@ abstract class FormActivity : AppCompatActivity() {
 
     abstract fun validateButtonBehaviour()
 
+
+
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
     // pour des raison de lisibilité du code, les variables et méthodes static
     // d'une classe doivent être regroupées dans un bloc à part: le companion object
