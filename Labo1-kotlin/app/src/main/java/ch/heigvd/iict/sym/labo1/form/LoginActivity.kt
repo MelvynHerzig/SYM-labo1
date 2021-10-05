@@ -5,6 +5,7 @@ import android.content.DialogInterface
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.ConnectedActivity
@@ -40,12 +41,8 @@ abstract class LoginActivity : FormActivity() {
         }
     }
 
-    abstract fun isValidLogin(email : String, password : String) : Boolean
-  
-  abstract fun onValidLogin()
+    abstract fun isValidLogin(email: String, password: String): Boolean
 
+    abstract fun onValidLogin()
 
-    companion object {
-        private const val TAG: String = "LoginActivity"
-    }
 }

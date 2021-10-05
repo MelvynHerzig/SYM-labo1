@@ -9,7 +9,7 @@ import ch.heigvd.iict.sym.labo1.R
 const val EXTRA_CREDENTIALS = "signup.CREDENTIAL"
 
 
-abstract  class SignupActivity : FormActivity() {
+abstract class SignupActivity : FormActivity() {
 
 
     override fun validateButtonBehaviour() {

@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -68,7 +69,7 @@ abstract class FormActivity : AppCompatActivity() {
 
             if (emailInput.isNullOrEmpty() or passwordInput.isNullOrEmpty()) {
                 // on affiche un message dans les logs de l'application
-                Log.d(TAG, "Au moins un des deux champs est vide")
+                Log.d(getTag(), "Au moins un des deux champs est vide")
                 // on affiche un message d'erreur sur les champs qui n'ont pas été renseignés
                 // la méthode getString permet de charger un String depuis les ressources de
                 // l'application à partir de son id
@@ -98,45 +99,49 @@ abstract class FormActivity : AppCompatActivity() {
 
     abstract fun validateButtonBehaviour()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(getTag(), "l'acivité a été créée")
+    }
 
-    fun onStart(savedInstanceState: Bundle?) {
+    override fun onStart() {
         super.onStart()
-        Log.d(TAG, "l'activité est démarée")
+        Log.d(getTag(), "l'activité est démarée")
     }
 
-    fun onResume(savedInstanceState: Bundle?) {
+    override fun onResume() {
         super.onResume()
-        Log.d(TAG, "l'activité est en reprise")
+        Log.d(getTag(), "l'activité est en reprise")
     }
 
-    fun onPause(savedInstanceState: Bundle?) {
+    override fun onPause() {
         super.onPause()
-        Log.d(TAG, "l'activité est mise en pause")
+        Log.d(getTag(), "l'activité est mise en pause")
     }
 
-    fun onStop(savedInstanceState: Bundle?) {
+    override fun onStop() {
         super.onStop()
-        Log.d(TAG, "l'activité est arrêtée")
+        Log.d(getTag(), "l'activité est arrêtée")
     }
 
-    fun onDestroy(savedInstanceState: Bundle?) {
+    override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "l'activité est détruite")
+        Log.d(getTag(), "l'activité est détruite")
     }
 
-    fun onRestart(savedInstanceState: Bundle?) {
+    override fun onRestart() {
         super.onRestart()
-        Log.d(TAG, "l'activité est redémarrée")
+        Log.d(getTag(), "l'activité est redémarrée")
     }
 
-    // En Kotlin, les variables static ne sont pas tout à fait comme en Java
-    // pour des raison de lisibilité du code, les variables et méthodes static
-    // d'une classe doivent être regroupées dans un bloc à part: le companion object
-    // cela permet d'avoir un aperçu plus rapide de tous les éléments static d'une classe
-    // sans devoir trouver le modifieur dans la définition de ceux-ci, qui peuvent être mélangé
-    // avec les autres éléments non-static de la classe
-    companion object {
-        private const val TAG: String = "FormActivity"
+
+
+
+    protected open fun getTag() : String{
+        return "FormActivity";
     }
+
+
+
 
 }

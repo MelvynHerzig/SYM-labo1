@@ -7,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -31,9 +32,10 @@ class MainActivity : LoginActivity() {
 
     private val getCredentials =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if(result.resultCode == Activity.RESULT_OK){
+            if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
-                val creds : Pair<String, String> = data?.getSerializableExtra(EXTRA_CREDENTIALS) as Pair<String, String>
+                val creds: Pair<String, String> =
+                    data?.getSerializableExtra(EXTRA_CREDENTIALS) as Pair<String, String>
                 credentials.add(creds)
             }
         }
@@ -64,10 +66,10 @@ class MainActivity : LoginActivity() {
         }
         startActivity(intent)
     }
-
-
-    companion object {
-        private const val TAG: String = "MainActivity"
+    override fun getTag(): String {
+        return "MainActivty"
     }
+
+
 
 }
