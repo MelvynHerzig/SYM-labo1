@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout-land/activity_connected.xml" value="0.2808641975308642" />
         <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout-land/activity_main.xml" value="0.264" />
         <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout-land/log_field.xml" value="0.11022927689594356" />
-        <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout/activity_connected.xml" value="0.13125" />
+        <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout/activity_signup.xml" value="0.16666666666666666" />
         <entry key="..\:/Drive/HEIG-VD/5eme semestre/SYM/Labos/SYM-labo1/Labo1-kotlin/app/src/main/res/layout/log_field.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/FDI/StudioProjects/Labo1/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.14635416666666667" />

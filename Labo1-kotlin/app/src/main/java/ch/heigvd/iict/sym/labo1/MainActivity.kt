@@ -19,6 +19,7 @@ const val EXTRA_EMAIL = "email.MESSAGE"
 
 class MainActivity : LoginActivity() {
 
+
     // on définit une liste de couples e-mail / mot de passe
     // ceci est fait juste pour simplifier ce premier laboratoire,
     // mais il est évident que de hardcoder ceux-ci est une pratique à éviter à tout prix...
@@ -27,6 +28,11 @@ class MainActivity : LoginActivity() {
         Pair("user1@heig-vd.ch", "1234"),
         Pair("user2@heig-vd.ch", "abcd")
     )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
 
     companion object {
         private const val TAG: String = "MainActivity"

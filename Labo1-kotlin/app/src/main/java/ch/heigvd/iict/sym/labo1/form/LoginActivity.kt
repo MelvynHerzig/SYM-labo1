@@ -6,20 +6,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.ConnectedActivity
+import ch.heigvd.iict.sym.labo1.CustomSignupActivity
 import ch.heigvd.iict.sym.labo1.R
 
-open class LoginActivity : FormActivity() {
+abstract class LoginActivity : FormActivity() {
     private lateinit var signupLink: TextView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // on définit le layout à utiliser pour l'affichage
-
+    override fun createUIBehaviour(){
+        super.createUIBehaviour()
 
         signupLink = findViewById(R.id.main_new_account)
 
         signupLink.setOnClickListener {
-            val intent = Intent(this, SignupActivity::class.java)
+            val intent = Intent(this, CustomSignupActivity::class.java)
             startActivity(intent)
         }
     }
