@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import ch.heigvd.iict.sym.labo1.form.SignupActivity
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
 class ConnectedActivity : AppCompatActivity() {
@@ -29,6 +28,36 @@ class ConnectedActivity : AppCompatActivity() {
         // Récupération de l'image ImageView et mise à jour.
         profilePicture = findViewById(R.id.connected_logo)
         ImageDownloader(profilePicture, "https://thispersondoesnotexist.com/image").show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "l'activité est démarée")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "l'activité est en reprise")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "l'activité est mise en pause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "l'activité est arrêtée")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "l'activité est détruite")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "l'activité est redémarrée")
     }
 
     companion object {

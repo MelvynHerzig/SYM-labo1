@@ -1,18 +1,9 @@
 package ch.heigvd.iict.sym.labo1
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import ch.heigvd.iict.sym.labo1.form.EXTRA_CREDENTIALS
 import ch.heigvd.iict.sym.labo1.form.LoginActivity
