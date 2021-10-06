@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="iso-8859-15" standalone="no"?>
+<classDiagram>
+  <diagramElements defaultViewEntities="ALL" defaultViewEnum="true" defaultViewMethods="TYPE_AND_NAME" defaultVisibleTypes="true" informations="" name="SYM Labo 1">
+    <dependency id="15" label="use">
+      <source>6</source>
+      <target>5</target>
+    </dependency>
+    <inheritance id="11">
+      <child>4</child>
+      <parent>1</parent>
+    </inheritance>
+    <inheritance id="12">
+      <child>3</child>
+      <parent>1</parent>
+    </inheritance>
+    <inheritance id="13">
+      <child>8</child>
+      <parent>4</parent>
+    </inheritance>
+    <inheritance id="14">
+      <child>7</child>
+      <parent>3</parent>
+    </inheritance>
+    <inheritance id="1489">
+      <child>16</child>
+      <parent>2</parent>
+    </inheritance>
+    <inheritance id="1490">
+      <child>6</child>
+      <parent>16</parent>
+    </inheritance>
+    <inheritance id="1491">
+      <child>1</child>
+      <parent>16</parent>
+    </inheritance>
+    <entity entityType="CLASS" id="1" isAbstract="true" name="FormActivity" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="email" type="EditText" visibility="PROTECTED"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="password" type="EditText" visibility="PROTECTED"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="cancelButton" type="Button" visibility="PROTECTED"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="validateButton" type="Button" visibility="PROTECTED"/>
+      <method isAbstract="false" isStatic="false" name="setContentView" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="layoutResID" type="Int"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="createUIBehaviour" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="validateButtonBehaviour" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="2" isAbstract="true" name="AppCompatActivity" visibility="PUBLIC"/>
+    <entity entityType="CLASS" id="3" isAbstract="true" name="LoginActivity" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="validateButtonBehaviour" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="isValidLogin" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="email" type="String"/>
+        <variable const="false" name="password" type="String"/>
+      </method>
+      <method isAbstract="true" isStatic="false" name="onValidLogin" returnType="Boolean" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="4" isAbstract="true" name="SignupActivity" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="validateButtonBehaviour" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="5" isAbstract="false" name="ImageDownloader" visibility="PUBLIC">
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="ImageDownloader" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="imageView" type="ImageView"/>
+        <variable const="false" name="url" type="String"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="downloadImage" returnType="Bitmap?" view="DEFAULT" visibility="PRIVATE"/>
+    </entity>
+    <entity entityType="CLASS" id="6" isAbstract="false" name="ConnectedActivity" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="email" type="TextView" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="profilePicture" type="ImageView" visibility="PRIVATE"/>
+      <method isAbstract="false" isStatic="false" name="onCreate" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="savedInstanceState" type="Bundle?"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="7" isAbstract="false" name="MainActivity" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="signupLink" type="TextView" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="credentials" type="mutableListOf" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="getCredentials" type="void" visibility="PRIVATE"/>
+      <method isAbstract="false" isStatic="false" name="onCreate" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="savedInstanceState" type="int"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="createUIBehaviour" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="isValidLogin" returnType="Boolean" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="email" type="String"/>
+        <variable const="false" name="password" type="String"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="onValidLogin" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getTag" returnType="String" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="8" isAbstract="false" name="CustomSignupActivity" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="onCreate" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="savedInstanceState" type="Bundle?"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getTag" returnType="String" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="16" isAbstract="true" name="LoggingActivity" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="onCreate" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onStart" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onResume" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onPause" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onStop" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onDestroy" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="onRestart" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="getTag" returnType="String" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+  </diagramElements>
+  <umlView grid="10" name="Main view" open="true">
+    <relationView color="-12566464" relationId="1491">
+      <line>
+        <point>
+          <x>831</x>
+          <y>321</y>
+        </point>
+        <point>
+          <x>831</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>641</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>641</x>
+          <y>276</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="1490">
+      <line>
+        <point>
+          <x>421</x>
+          <y>321</y>
+        </point>
+        <point>
+          <x>421</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>641</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>641</x>
+          <y>276</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="1489">
+      <line>
+        <point>
+          <x>641</x>
+          <y>101</y>
+        </point>
+        <point>
+          <x>641</x>
+          <y>56</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="14">
+      <line>
+        <point>
+          <x>1051</x>
+          <y>691</y>
+        </point>
+        <point>
+          <x>1051</x>
+          <y>651</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="13">
+      <line>
+        <point>
+          <x>591</x>
+          <y>691</y>
+        </point>
+        <point>
+          <x>591</x>
+          <y>621</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="12">
+      <line>
+        <point>
+          <x>1051</x>
+          <y>551</y>
+        </point>
+        <point>
+          <x>1051</x>
+          <y>511</y>
+        </point>
+        <point>
+          <x>821</x>
+          <y>511</y>
+        </point>
+        <point>
+          <x>821</x>
+          <y>481</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="11">
+      <line>
+        <point>
+          <x>591</x>
+          <y>551</y>
+        </point>
+        <point>
+          <x>591</x>
+          <y>511</y>
+        </point>
+        <point>
+          <x>821</x>
+          <y>511</y>
+        </point>
+        <point>
+          <x>821</x>
+          <y>481</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="15">
+      <line>
+        <point>
+          <x>271</x>
+          <y>371</y>
+        </point>
+        <point>
+          <x>191</x>
+          <y>371</y>
+        </point>
+        <point>
+          <x>191</x>
+          <y>471</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>235</x>
+        <y>375</y>
+        <w>22</w>
+        <h>17</h>
+      </labelAssociation>
+    </relationView>
+    <componentView color="-2079" componentID="16" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>560</x>
+        <y>100</y>
+        <w>150</w>
+        <h>175</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="8" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>450</x>
+        <y>690</y>
+        <w>290</w>
+        <h>85</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="7" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>890</x>
+        <y>690</y>
+        <w>310</w>
+        <h>175</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="6" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>270</x>
+        <y>320</y>
+        <w>300</w>
+        <h>100</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="5" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>20</x>
+        <y>470</y>
+        <w>350</w>
+        <h>85</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="4" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>450</x>
+        <y>550</y>
+        <w>290</w>
+        <h>70</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="3" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>890</x>
+        <y>550</y>
+        <w>310</w>
+        <h>100</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="2" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>560</x>
+        <y>0</y>
+        <w>150</w>
+        <h>55</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="1" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>700</x>
+        <y>320</y>
+        <w>250</w>
+        <h>160</h>
+      </geometry>
+    </componentView>
+  </umlView>
+</classDiagram>

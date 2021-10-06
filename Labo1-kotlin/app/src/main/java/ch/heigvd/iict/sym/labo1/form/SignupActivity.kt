@@ -7,7 +7,6 @@ const val EXTRA_CREDENTIALS = "signup.CREDENTIAL"
 
 abstract class SignupActivity : FormActivity() {
 
-
     override fun validateButtonBehaviour() {
 
         //on récupère le contenu de deux champs dans des variables de type String
@@ -22,7 +21,7 @@ abstract class SignupActivity : FormActivity() {
         finish()
     }
 
-    companion object {
-        private const val TAG: String = "SignupActivity"
+    override fun getTag() : String {
+        return "SignupActivity";
     }
 }

@@ -1,13 +1,11 @@
 package ch.heigvd.iict.sym.labo1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
-class ConnectedActivity : AppCompatActivity() {
+class ConnectedActivity : LoggingActivity() {
 
     private lateinit var email: TextView
     private lateinit var profilePicture: ImageView
@@ -15,8 +13,6 @@ class ConnectedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connected)
-
-        Log.d(TAG, "l'activité est en créée")
 
         // Récupération de l'intention et récupération de la chaîne
         val emailInput = intent.getStringExtra(EXTRA_EMAIL)
@@ -30,37 +26,7 @@ class ConnectedActivity : AppCompatActivity() {
         ImageDownloader(profilePicture, "https://thispersondoesnotexist.com/image").show()
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "l'activité est démarée")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "l'activité est en reprise")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(TAG, "l'activité est mise en pause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG, "l'activité est arrêtée")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(TAG, "l'activité est détruite")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d(TAG, "l'activité est redémarrée")
-    }
-
-    companion object {
-        private const val TAG: String = "ConnectedActivity"
+    override fun getTag(): String {
+        return "ConnectedActivity"
     }
 }

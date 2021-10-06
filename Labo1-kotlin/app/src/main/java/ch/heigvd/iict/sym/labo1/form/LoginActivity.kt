@@ -7,7 +7,6 @@ import ch.heigvd.iict.sym.labo1.R
 
 abstract class LoginActivity : FormActivity() {
 
-
     override fun validateButtonBehaviour() {
 
         //on récupère le contenu de deux champs dans des variables de type String
@@ -38,4 +37,7 @@ abstract class LoginActivity : FormActivity() {
 
     abstract fun onValidLogin()
 
+    override fun getTag() : String {
+        return "LoginActivity";
+    }
 }
