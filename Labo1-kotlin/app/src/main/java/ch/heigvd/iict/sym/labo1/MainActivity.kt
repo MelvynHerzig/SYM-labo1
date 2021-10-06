@@ -1,20 +1,12 @@
 package ch.heigvd.iict.sym.labo1
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import ch.heigvd.iict.sym.labo1.form.EXTRA_CREDENTIALS
+import ch.heigvd.iict.sym.labo1.form.EXTRA_PASSWORD
+import ch.heigvd.iict.sym.labo1.form.EXTRA_USERNAME
 import ch.heigvd.iict.sym.labo1.form.LoginActivity
 
 // Clé pour le passage de l'adresse mail
@@ -34,8 +26,13 @@ class MainActivity : LoginActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
-                val creds: Pair<String, String> =
-                    data?.getSerializableExtra(EXTRA_CREDENTIALS) as Pair<String, String>
+
+
+                val creds: Pair<String, String> = Pair(
+                    data?.getStringExtra(EXTRA_USERNAME).toString(),
+                    data?.getStringExtra(EXTRA_PASSWORD).toString()
+                )
+
                 credentials.add(creds)
             }
         }
@@ -66,10 +63,10 @@ class MainActivity : LoginActivity() {
         }
         startActivity(intent)
     }
+
     override fun getTag(): String {
         return "MainActivty"
     }
-
 
 
 }

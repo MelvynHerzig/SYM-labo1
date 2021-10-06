@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import ch.heigvd.iict.sym.labo1.R
 
-const val EXTRA_CREDENTIALS = "signup.CREDENTIAL"
-
+const val EXTRA_USERNAME = "signup.EMAIL"
+const val EXTRA_PASSWORD = "signup.PASSWORD"
 
 abstract class SignupActivity : FormActivity() {
 
@@ -20,7 +20,8 @@ abstract class SignupActivity : FormActivity() {
 
         val data = Intent()
 
-        data.putExtra(EXTRA_CREDENTIALS, Pair(emailInput, passwordInput))
+        data.putExtra(EXTRA_USERNAME, emailInput)
+        data.putExtra(EXTRA_PASSWORD, passwordInput)
 
         setResult(RESULT_OK, data)
         finish()
