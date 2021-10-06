@@ -1,16 +1,11 @@
 package ch.heigvd.iict.sym.labo1.form
 
 import android.content.Intent
-import android.net.Uri
-import android.os.Bundle
-import android.util.Log
-import ch.heigvd.iict.sym.labo1.R
 
 const val EXTRA_USERNAME = "signup.EMAIL"
 const val EXTRA_PASSWORD = "signup.PASSWORD"
 
 abstract class SignupActivity : FormActivity() {
-
 
     override fun validateButtonBehaviour() {
 
@@ -27,7 +22,7 @@ abstract class SignupActivity : FormActivity() {
         finish()
     }
 
-    companion object {
-        private const val TAG: String = "SignupActivity"
+    override fun getTag() : String {
+        return "SignupActivity";
     }
 }

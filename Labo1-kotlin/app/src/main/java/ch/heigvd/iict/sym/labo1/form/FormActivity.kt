@@ -1,25 +1,16 @@
 package ch.heigvd.iict.sym.labo1.form
 
-import android.app.AlertDialog
-import android.content.DialogInterface
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import ch.heigvd.iict.sym.labo1.LoggingActivity
 import ch.heigvd.iict.sym.labo1.R
 
 // Clé pour le passage de l'adresse mail
 const val EXTRA_EMAIL = "email.MESSAGE"
 
-abstract class FormActivity : AppCompatActivity() {
-
+abstract class FormActivity : LoggingActivity() {
 
     // le modifieur lateinit permet de définir des variables avec un type non-null
     // sans pour autant les initialiser immédiatement
@@ -99,49 +90,7 @@ abstract class FormActivity : AppCompatActivity() {
 
     abstract fun validateButtonBehaviour()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d(getTag(), "l'acivité a été créée")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d(getTag(), "l'activité est démarée")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(getTag(), "l'activité est en reprise")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(getTag(), "l'activité est mise en pause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(getTag(), "l'activité est arrêtée")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(getTag(), "l'activité est détruite")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d(getTag(), "l'activité est redémarrée")
-    }
-
-
-
-
-    protected open fun getTag() : String{
+    override fun getTag() : String{
         return "FormActivity";
     }
-
-
-
-
 }

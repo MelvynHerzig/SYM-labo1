@@ -16,7 +16,6 @@ class MainActivity : LoginActivity() {
 
     private lateinit var signupLink: TextView
 
-
     private val credentials = mutableListOf(
         Pair("user1@heig-vd.ch", "1234"),
         Pair("user2@heig-vd.ch", "abcd")
@@ -67,6 +66,4 @@ class MainActivity : LoginActivity() {
     override fun getTag(): String {
         return "MainActivty"
     }
-
-
 }
