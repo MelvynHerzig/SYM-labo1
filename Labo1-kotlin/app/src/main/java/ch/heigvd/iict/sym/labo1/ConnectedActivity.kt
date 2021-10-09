@@ -5,6 +5,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
+/**
+ * Activité présenté lorsque l'utilisateur s'est authentifié correctement.
+ * @author Berney Alec
+ * @author Forestier Quentin
+ * @author Herzig Melvyn
+ */
 class ConnectedActivity : LoggingActivity() {
 
     private lateinit var email: TextView
