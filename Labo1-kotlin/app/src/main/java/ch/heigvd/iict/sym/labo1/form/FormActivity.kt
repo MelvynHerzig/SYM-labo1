@@ -43,10 +43,10 @@ abstract class FormActivity : LoggingActivity() {
     open fun createUIBehaviour() {
 
         // Liaison des éléments graphiques
-        email = findViewById(R.id.form_email)
-        password = findViewById(R.id.form_password)
-        cancelButton = findViewById(R.id.form_cancel)
-        validateButton = findViewById(R.id.form_validate)
+        email = findViewById(R.id.log_email)
+        password = findViewById(R.id.log_password)
+        cancelButton = findViewById(R.id.log_cancel)
+        validateButton = findViewById(R.id.log_validate)
 
         // Mise en place des événements
 

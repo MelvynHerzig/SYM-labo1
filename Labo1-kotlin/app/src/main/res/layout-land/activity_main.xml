@@ -29,7 +29,7 @@
         android:orientation="vertical"
         android:gravity="center_vertical">
 
-        <include layout="@layout/log_field" />
+        <include layout="@layout/teamplate_log" />
 
 
         <TextView

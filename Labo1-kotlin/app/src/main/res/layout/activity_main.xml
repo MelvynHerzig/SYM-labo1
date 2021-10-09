@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/ic_launcher_foreground"
         android:contentDescription="@string/main_icon_desc" />
 
-    <include layout="@layout/log_field"
+    <include layout="@layout/teamplate_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
