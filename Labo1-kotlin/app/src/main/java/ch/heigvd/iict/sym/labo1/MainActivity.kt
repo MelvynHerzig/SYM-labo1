@@ -67,10 +67,16 @@ class MainActivity : LoginActivity() {
         }
     }
 
+    /**
+     * Vérifie le couple email et mot de passe dans les credentials.
+     */
     override fun isValidLogin(email: String, password: String): Boolean {
         return credentials.contains(Pair(email, password))
     }
 
+    /**
+     * Définition de l'action en cas de login validé. Ouverture de connectedActivity.
+     */
     override fun onValidLogin() {
         val intent = Intent(this, ConnectedActivity::class.java).apply {
             putExtra(ch.heigvd.iict.sym.labo1.form.EXTRA_EMAIL, email.text?.toString())
@@ -78,6 +84,9 @@ class MainActivity : LoginActivity() {
         startActivity(intent)
     }
 
+    /**
+     * Retourne le tag de l'activité.
+     */
     override fun getTag(): String {
         return "MainActivty"
     }

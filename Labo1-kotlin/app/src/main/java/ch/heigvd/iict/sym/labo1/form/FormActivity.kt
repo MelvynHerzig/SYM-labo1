@@ -10,38 +10,47 @@ import ch.heigvd.iict.sym.labo1.R
 // Clé pour le passage de l'adresse mail
 const val EXTRA_EMAIL = "email.MESSAGE"
 
+/**
+ * Activité abstraite lié à l'inscription / connexion.
+ * @author Berney Alec
+ * @author Forestier Quentin
+ * @author Herzig Melvyn
+ */
 abstract class FormActivity : LoggingActivity() {
 
-    // le modifieur lateinit permet de définir des variables avec un type non-null
-    // sans pour autant les initialiser immédiatement
+    // Référence sur le champ email.
     protected lateinit var email: EditText
+
+    // Référence sur le champ password.
     protected lateinit var password: EditText
+
+    // Référence sur le bouton d'annulation.
     protected lateinit var cancelButton: Button
+
+    // Référence sur le bouton valider.
     protected lateinit var validateButton: Button
 
 
+    // Initialise la vue et ajoute le comportement de l'IU.
     override fun setContentView(layoutResID: Int) {
         super.setContentView(layoutResID)
         createUIBehaviour()
     }
 
-
+    /**
+     * Liaison des éléments graphiques et création des listener.
+     */
     open fun createUIBehaviour() {
 
-        // on va maintenant lier le code avec les éléments graphiques (champs texts, boutons, etc.)
-        // présents dans le layout (nous allons utiliser l'id défini dans le layout, le cast est
-        // réalisé automatiquement)
+        // Liaison des éléments graphiques
         email = findViewById(R.id.form_email)
         password = findViewById(R.id.form_password)
         cancelButton = findViewById(R.id.form_cancel)
         validateButton = findViewById(R.id.form_validate)
 
-        // Kotlin, au travers des Android Kotlin Extensions permet d'automatiser encore plus cette
-        // étape en créant automatiquement les variables pour tous les éléments graphiques présents
-        // dans le layout et disposant d'un id
-        // cf. https://medium.com/@temidjoy/findviewbyid-vs-android-kotlin-extensions-7db3c6cc1d0a
+        // Mise en place des événements
 
-        //mise en place des événements
+        // Bouton d'annulation, vide les champs.
         cancelButton.setOnClickListener {
             email.text?.clear()
             email.error = null
@@ -49,6 +58,7 @@ abstract class FormActivity : LoggingActivity() {
             password.error = null
         }
 
+        // Bouton validation
         validateButton.setOnClickListener {
             //on réinitialise les messages d'erreur
             email.error = null
@@ -84,12 +94,19 @@ abstract class FormActivity : LoggingActivity() {
                 return@setOnClickListener
             }
 
+            // Extension du comportement du bouton de validation.
             validateButtonBehaviour()
         }
     }
 
+    /**
+     * Permet l'extension du comportement du bouton valider.
+     */
     abstract fun validateButtonBehaviour()
 
+    /**
+     * Retourne le tag de l'activité
+     */
     override fun getTag() : String{
         return "FormActivity";
     }

@@ -13,9 +13,15 @@ import ch.heigvd.iict.sym.labo1.network.ImageDownloader
  */
 class ConnectedActivity : LoggingActivity() {
 
+    // Référence sur le champ email
     private lateinit var email: TextView
+
+    // Référence sur le champ de l'image
     private lateinit var profilePicture: ImageView
 
+    /**
+     * Initialise la vue, récupération de l'extra et chargement de l'image.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connected)
@@ -32,6 +38,9 @@ class ConnectedActivity : LoggingActivity() {
         ImageDownloader(profilePicture, "https://thispersondoesnotexist.com/image").show()
     }
 
+    /**
+     * Retourne le tag de l'activité
+     */
     override fun getTag(): String {
         return "ConnectedActivity"
     }

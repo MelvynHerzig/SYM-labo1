@@ -5,8 +5,17 @@ import android.content.DialogInterface
 
 import ch.heigvd.iict.sym.labo1.R
 
+/**
+ * Classe de base aux activités de connexion.
+ * @author Berney Alec
+ * @author Forestier Quentin
+ * @author Herzig Melvyn
+ */
 abstract class LoginActivity : FormActivity() {
 
+    /**
+     * Extension du comportement du bouton de validation.
+     */
     override fun validateButtonBehaviour() {
 
         //on récupère le contenu de deux champs dans des variables de type String
@@ -17,11 +26,9 @@ abstract class LoginActivity : FormActivity() {
         if (isValidLogin(emailInput!!, passwordInput!!)) {
 
             onValidLogin()
-            // Valide, ouverture nouvelle activité.
-
 
         } else {
-            // Inexistant, affichage fenêtre de dialogue.
+            // Affichage fenêtre de dialogue.
             val builder = AlertDialog.Builder(this)
             builder.setMessage(getString(R.string.main_error_email_pass))
                 .setPositiveButton(getString(R.string.main_ok_button),
@@ -33,10 +40,19 @@ abstract class LoginActivity : FormActivity() {
         }
     }
 
+    /**
+     * Vérification du login.
+     */
     abstract fun isValidLogin(email: String, password: String): Boolean
 
+    /**
+     * Action lorsque le login est validé.
+     */
     abstract fun onValidLogin()
 
+    /**
+     * Retourne le tag
+     */
     override fun getTag() : String {
         return "LoginActivity";
     }
